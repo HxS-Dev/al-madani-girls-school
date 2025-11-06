@@ -1,0 +1,38 @@
+{
+  "name": "al-madani-girls-school",
+  "version": "1.0.0",
+  "description": "Al-Madani Girls School Website - React Application",
+  "main": "main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@splidejs/react-splide": "^0.7.12",
+    "animejs": "^3.2.1",
+    "echarts": "^5.4.0",
+    "echarts-for-react": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "typed.js": "^2.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.6",
+    "vite": "^4.1.0"
+  },
+  "keywords": [
+    "school",
+    "education",
+    "react",
+    "girls-school",
+    "uk"
+  ],
+  "author": "Al-Madani Girls School",
+  "license": "MIT"
+}

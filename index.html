@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Madani Girls School - Excellence in Education</title>
+    <meta name="description" content="Al-Madani Girls School in Slough, UK - Providing exceptional education for young women with academic excellence, modern facilities, and inclusive community.">
+    <link rel="icon" type="image/x-icon" href="/resources/school-logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a8a',
+                        'sage': '#6b7280',
+                        'gold': '#d97706',
+                        'cream': '#fefce8',
+                        'charcoal': '#374151'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'accent': ['Source Serif Pro', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1e3a8a 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-dropdown {
+            opacity: 0;
+            transform: translateY(-10px);
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dropdown.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-cream font-body text-charcoal">
+    <div id="root"></div>
+    <script type="module" src="/main.jsx"></script>
+</body>
+</html>
