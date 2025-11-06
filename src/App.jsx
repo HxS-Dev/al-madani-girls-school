@@ -25,7 +25,7 @@ function App() {
       <div className="min-h-screen bg-cream flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-navy border-t-gold rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-navy font-display text-xl">Loading Al-Madani Islamic Girls School...</p>
+          <p className="text-navy font-display text-xl">Loading Al-Madani Girls School...</p>
           <p className="text-sage text-sm mt-2">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
         </div>
       </div>

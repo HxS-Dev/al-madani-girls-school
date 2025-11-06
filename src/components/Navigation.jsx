@@ -4,6 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 function Navigation() {
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [dropdownTimeout, setDropdownTimeout] = useState(null)
   const location = useLocation()
 
   const menuItems = [
@@ -59,11 +60,30 @@ function Navigation() {
   ]
 
   const handleDropdownToggle = (index) => {
-    setOpenDropdown(openDropdown === index ? null : index)
+    // Mobile dropdown logic
+    if (typeof index === 'string' && index.startsWith('mobile')) {
+      setOpenDropdown(openDropdown === index ? 'mobile' : index)
+    } else {
+      setOpenDropdown(openDropdown === index ? null : index)
+    }
+  }
+
+  // Add delay before closing dropdown on desktop
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setOpenDropdown(null)
+    }, 200) // 200ms delay
+    setDropdownTimeout(timeout)
+  }
+
+  const handleMouseEnter = (index) => {
+    if (dropdownTimeout) clearTimeout(dropdownTimeout)
+    setOpenDropdown(index)
   }
 
   const closeDropdown = () => {
     setOpenDropdown(null)
+    if (dropdownTimeout) clearTimeout(dropdownTimeout)
   }
 
   return (
@@ -71,7 +91,7 @@ function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-3" onClick={closeDropdown}>
-            <img src="/resources/school-logo.jpg" alt="Al-Madani Girls School Logo" className="w-10 h-10 object-cover" />
+            <img src="../../resources/school-logo.jpg" alt="Al-Madani Girls School Logo" className="w-10 h-10 object-cover" />
             <div>
               <h1 className="text-xl font-display text-navy font-bold">Al-Madani Girls School</h1>
               <p className="text-sage text-sm">Tarbiyah For Generations</p>
@@ -83,8 +103,8 @@ function Navigation() {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.dropdown && setOpenDropdown(index)}
-                onMouseLeave={() => item.dropdown && setOpenDropdown(null)}
+                onMouseEnter={() => item.dropdown && handleMouseEnter(index)}
+                onMouseLeave={() => item.dropdown && handleMouseLeave()}
               >
                 {item.dropdown ? (
                   <button
@@ -94,6 +114,8 @@ function Navigation() {
                         : 'text-navy hover:bg-cream'
                     }`}
                     onClick={() => handleDropdownToggle(index)}
+                    aria-haspopup="true"
+                    aria-expanded={openDropdown === index}
                   >
                     {item.name}
                     <ChevronDownIcon className="w-4 h-4 ml-1" />
@@ -155,6 +177,8 @@ function Navigation() {
                     <button
                       className="w-full text-left px-4 py-2 text-navy hover:bg-cream rounded-lg flex items-center justify-between"
                       onClick={() => handleDropdownToggle(`mobile-${index}`)}
+                      aria-haspopup="true"
+                      aria-expanded={openDropdown === `mobile-${index}`}
                     >
                       {item.name}
                       <ChevronDownIcon className="w-4 h-4" />
