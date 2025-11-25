@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 function Navigation() {
   const [openDropdown, setOpenDropdown] = useState(null)
   const [dropdownTimeout, setDropdownTimeout] = useState(null)
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null)
   const location = useLocation()
 
   const menuItems = [
@@ -189,14 +190,14 @@ function Navigation() {
                   <div>
                     <button
                       className="w-full text-left px-4 py-2 text-navy hover:bg-cream rounded-lg flex items-center justify-between"
-                      onClick={() => handleDropdownToggle(`mobile-${index}`)}
+                      onClick={() => setOpenMobileSubmenu(openMobileSubmenu === index ? null : index)}
                       aria-haspopup="true"
-                      aria-expanded={openDropdown === `mobile-${index}`}
+                      aria-expanded={openMobileSubmenu === index}
                     >
                       {item.name}
                       <ChevronDownIcon className="w-4 h-4" />
                     </button>
-                    {openDropdown === `mobile-${index}` && (
+                    {openMobileSubmenu === index && (
                       <div className="ml-4 mt-1">
                         {item.dropdown.map((subItem) => (
                           subItem.path.startsWith('http') ? (
@@ -206,7 +207,7 @@ function Navigation() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="block px-4 py-2 text-sm text-gray-600 hover:bg-cream rounded-lg"
-                              onClick={closeDropdown}
+                              onClick={() => { setOpenDropdown(null); setOpenMobileSubmenu(null); }}
                             >
                               {subItem.name}
                             </a>
@@ -215,7 +216,7 @@ function Navigation() {
                               key={subItem.name}
                               to={subItem.path}
                               className="block px-4 py-2 text-sm text-gray-600 hover:bg-cream rounded-lg"
-                              onClick={closeDropdown}
+                              onClick={() => { setOpenDropdown(null); setOpenMobileSubmenu(null); }}
                             >
                               {subItem.name}
                             </Link>
