@@ -14,7 +14,7 @@ function Navigation() {
       dropdown: [
         { name: "Headteacher's Introduction", path: '/about/headteacher' },
         { name: 'School Values & Mission Statement', path: '/about/values' },
-        { name: 'Ofsted Report', path: '/about/ofsted' },
+        { name: 'Ofsted Report', path: 'https://reports.ofsted.gov.uk/provider/27/136955' },
         { name: 'Academic Results', path: '/about/results' },
         { name: 'Contact, Staff & Governors', path: '/about/contact' }
       ]
@@ -137,18 +137,31 @@ function Navigation() {
                 {item.dropdown && openDropdown === index && (
                   <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
                     {item.dropdown.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        to={subItem.path}
-                        className={`block px-4 py-2 text-sm transition-colors ${
-                          location.pathname === subItem.path
-                            ? 'bg-navy text-white'
-                            : 'text-gray-700 hover:bg-cream'
-                        }`}
-                        onClick={closeDropdown}
-                      >
-                        {subItem.name}
-                      </Link>
+                      subItem.path.startsWith('http') ? (
+                        <a
+                          key={subItem.name}
+                          href={subItem.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-cream rounded-lg"
+                          onClick={closeDropdown}
+                        >
+                          {subItem.name}
+                        </a>
+                      ) : (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.path}
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            location.pathname === subItem.path
+                              ? 'bg-navy text-white'
+                              : 'text-gray-700 hover:bg-cream'
+                          }`}
+                          onClick={closeDropdown}
+                        >
+                          {subItem.name}
+                        </Link>
+                      )
                     ))}
                   </div>
                 )}
@@ -186,14 +199,27 @@ function Navigation() {
                     {openDropdown === `mobile-${index}` && (
                       <div className="ml-4 mt-1">
                         {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            to={subItem.path}
-                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-cream rounded-lg"
-                            onClick={closeDropdown}
-                          >
-                            {subItem.name}
-                          </Link>
+                          subItem.path.startsWith('http') ? (
+                            <a
+                              key={subItem.name}
+                              href={subItem.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-4 py-2 text-sm text-gray-600 hover:bg-cream rounded-lg"
+                              onClick={closeDropdown}
+                            >
+                              {subItem.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={subItem.name}
+                              to={subItem.path}
+                              className="block px-4 py-2 text-sm text-gray-600 hover:bg-cream rounded-lg"
+                              onClick={closeDropdown}
+                            >
+                              {subItem.name}
+                            </Link>
+                          )
                         ))}
                       </div>
                     )}

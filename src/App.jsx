@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -8,6 +8,28 @@ import News from './pages/News'
 import Dates from './pages/Dates'
 import Admissions from './pages/Admissions'
 import Information from './pages/Information'
+
+function AppContent() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+  return (
+    <div className="min-h-screen bg-cream">
+      <Navigation />
+      {!isHome && <div className="mb-6" />}
+      <main className="pb-12">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about/*" element={<About />} />
+          <Route path="/news-events/*" element={<News />} />
+          <Route path="/key-dates/*" element={<Dates />} />
+          <Route path="/admissions/*" element={<Admissions />} />
+          <Route path="/fees-information/*" element={<Information />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -34,20 +56,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-cream">
-        <Navigation />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about/*" element={<About />} />
-            <Route path="/news-events/*" element={<News />} />
-            <Route path="/key-dates/*" element={<Dates />} />
-            <Route path="/admissions/*" element={<Admissions />} />
-            <Route path="/fees-information/*" element={<Information />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   )
 }

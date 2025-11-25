@@ -41,7 +41,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/information/curriculum" className="text-gray-300 hover:text-white transition-colors">Islamic Curriculum</Link></li>
               <li><Link to="/about/results" className="text-gray-300 hover:text-white transition-colors">Academic Results</Link></li>
-              <li><Link to="/about/ofsted" className="text-gray-300 hover:text-white transition-colors">Ofsted Report</Link></li>
+              <li><a href="https://reports.ofsted.gov.uk/provider/27/136955" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Ofsted Report</a></li>
               <li><Link to="/information/policies" className="text-gray-300 hover:text-white transition-colors">School Policies</Link></li>
             </ul>
           </div>

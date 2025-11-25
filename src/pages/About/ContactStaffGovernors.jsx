@@ -15,8 +15,8 @@ const ContactStaffGovernors = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Contact Information */}
+      {/* Contact Information */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
         <div className="space-y-8">
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="font-display text-2xl font-bold text-charcoal mb-6">Contact Information</h3>
@@ -28,7 +28,7 @@ const ContactStaffGovernors = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-charcoal">Address</p>
-                  <p className="text-sage">123 Education Lane, Slough, Berkshire, SL1 1AA</p>
+                  <p className="text-sage">339-341 Bath Road, Slough, SL1 5PR</p>
                 </div>
               </div>
               
@@ -38,7 +38,7 @@ const ContactStaffGovernors = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-charcoal">Phone</p>
-                  <p className="text-sage">+44 1753 123456</p>
+                  <p className="text-sage">+44 1628 298841</p>
                 </div>
               </div>
               
@@ -48,7 +48,7 @@ const ContactStaffGovernors = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-charcoal">Email</p>
-                  <p className="text-sage">info@al-madani-girls-school.co.uk</p>
+                  <p className="text-sage">office@almadanigirls.uk</p>
                 </div>
               </div>
               
@@ -63,38 +63,9 @@ const ContactStaffGovernors = () => {
               </div>
             </div>
           </div>
-
-          {/* Senior Leadership Team */}
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="font-display text-2xl font-bold text-charcoal mb-6">Senior Leadership Team</h3>
-            <div className="space-y-4">
-              <div className="border-b border-gray-200 pb-4">
-                <h4 className="font-semibold text-charcoal">Dr. Sarah Ahmed</h4>
-                <p className="text-sage">Headteacher</p>
-              </div>
-              <div className="border-b border-gray-200 pb-4">
-                <h4 className="font-semibold text-charcoal">Mrs. Patricia Williams</h4>
-                <p className="text-sage">Deputy Headteacher (Academic)</p>
-              </div>
-              <div className="border-b border-gray-200 pb-4">
-                <h4 className="font-semibold text-charcoal">Ms. Jennifer Martinez</h4>
-                <p className="text-sage">Deputy Headteacher (Pastoral)</p>
-              </div>
-              <div className="border-b border-gray-200 pb-4">
-                <h4 className="font-semibold text-charcoal">Mr. David Thompson</h4>
-                <p className="text-sage">Assistant Headteacher (Teaching & Learning)</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-charcoal">Mrs. Lisa Anderson</h4>
-                <p className="text-sage">Assistant Headteacher (Sixth Form)</p>
-              </div>
-            </div>
-          </div>
         </div>
-
-        {/* Contact Form */}
         <div className="bg-white p-8 rounded-xl shadow-lg">
-          <h3 className="font-display text-2xl font-bold text-charcoal mb-6">Send us a Message</h3>
+          <h3 className="font-display text-2xl font-bold text-charcoal mb-6 text-center">Send us a Message</h3>
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -140,6 +111,60 @@ const ContactStaffGovernors = () => {
           </form>
         </div>
       </div>
+
+      {/* Administration Section */}
+      <section className="mb-12">
+        <h3 className="font-display text-2xl font-bold text-navy mb-4">Administration</h3>
+        <div className="bg-white rounded-xl shadow p-6 mb-4">
+          <ul className="space-y-2">
+            <li><span className="font-semibold">Mrs. Aisha Khan</span> – School Administrator</li>
+            <li><span className="font-semibold">Mr. Bilal Patel</span> – Admissions Officer</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Senior Leadership Section */}
+      <section className="mb-12">
+        <h3 className="font-display text-2xl font-bold text-navy mb-4">Senior Leadership</h3>
+        <div className="bg-white rounded-xl shadow p-6 mb-4">
+          <ul className="space-y-2">
+            <li><span className="font-semibold">Dr. Sarah Ahmed</span> – Headteacher</li>
+            <li><span className="font-semibold">Mrs. Patricia Williams</span> – Deputy Headteacher (Academic)</li>
+            <li><span className="font-semibold">Ms. Jennifer Martinez</span> – Deputy Headteacher (Pastoral)</li>
+            <li><span className="font-semibold">Mr. David Thompson</span> – Assistant Headteacher (Teaching & Learning)</li>
+            <li><span className="font-semibold">Mrs. Lisa Anderson</span> – Assistant Headteacher (Sixth Form)</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Staff Section */}
+      <section className="mb-12">
+        <h3 className="font-display text-2xl font-bold text-navy mb-4">Staff</h3>
+        <div className="bg-white rounded-xl shadow p-6 mb-4">
+          <ul className="space-y-2">
+            <li><span className="font-semibold">Mr. Ahmed Siddiqui</span> – Mathematics Teacher</li>
+            <li><span className="font-semibold">Ms. Fatima Noor</span> – Science Teacher</li>
+            <li><span className="font-semibold">Mrs. Yasmin Ali</span> – English Teacher</li>
+            <li><span className="font-semibold">Mr. Tariq Hussain</span> – History Teacher</li>
+            <li><span className="font-semibold">Ms. Sofia Rahman</span> – Religious Studies Teacher</li>
+            {/* Add more staff as needed */}
+          </ul>
+        </div>
+      </section>
+
+      {/* Governance Section */}
+      <section className="mb-12">
+        <h3 className="font-display text-2xl font-bold text-navy mb-4">Governance</h3>
+        <div className="bg-white rounded-xl shadow p-6 mb-4">
+          <ul className="space-y-2">
+            <li><span className="font-semibold">Mr. Imran Qureshi</span> – Chair of Governors</li>
+            <li><span className="font-semibold">Mrs. Saira Begum</span> – Governor (Safeguarding)</li>
+            <li><span className="font-semibold">Dr. Farooq Malik</span> – Governor (Curriculum)</li>
+            <li><span className="font-semibold">Ms. Layla Hussain</span> – Governor (Community)</li>
+            {/* Add more governors as needed */}
+          </ul>
+        </div>
+      </section>
     </div>
   )
 }

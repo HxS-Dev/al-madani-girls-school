@@ -13,110 +13,124 @@ const AcademicResults = () => {
           Academic Results
         </h2>
         <p className="text-xl text-sage">
-          Our students consistently achieve outstanding academic results across all key stages.
+          Our students consistently achieve outstanding academic results in their GCSE exams.
         </p>
       </div>
 
-      <div className="space-y-12">
-        {/* GCSE Results */}
-        <section>
-          <h3 className="font-display text-2xl font-bold text-charcoal mb-8 text-center">
-            GCSE Results {academicResults.gcse.year}
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-navy mb-2">{academicResults.gcse.grade9}</div>
-                <p className="text-sage">Grade 9</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-gold mb-2">{academicResults.gcse.grades9_7}</div>
-                <p className="text-sage">Grades 9-7</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-navy mb-2">{academicResults.gcse.grades9_4}</div>
-                <p className="text-sage">Grades 9-4</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-gold mb-2">{academicResults.gcse.attainment8}</div>
-                <p className="text-sage">Attainment 8</p>
-              </Card.Body>
-            </Card>
-          </div>
-        </section>
-
-        {/* A-Level Results */}
-        <section>
-          <h3 className="font-display text-2xl font-bold text-charcoal mb-8 text-center">
-            A-Level Results {academicResults.alevel.year}
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-navy mb-2">{academicResults.alevel.aStar}</div>
-                <p className="text-sage">A* Grades</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-gold mb-2">{academicResults.alevel.aStarA}</div>
-                <p className="text-sage">A*-A Grades</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-navy mb-2">{academicResults.alevel.aStarB}</div>
-                <p className="text-sage">A*-B Grades</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-gold mb-2">{academicResults.alevel.passRate}</div>
-                <p className="text-sage">Pass Rate</p>
-              </Card.Body>
-            </Card>
-          </div>
-        </section>
-
-        {/* University Destinations */}
-        <section>
-          <h3 className="font-display text-2xl font-bold text-charcoal mb-8 text-center">
-            University Destinations
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-navy mb-2">{academicResults.destinations.university}</div>
-                <p className="text-sage">University</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-gold mb-2">{academicResults.destinations.russellGroup}</div>
-                <p className="text-sage">Russell Group</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-navy mb-2">{academicResults.destinations.apprenticeship}</div>
-                <p className="text-sage">Apprenticeships</p>
-              </Card.Body>
-            </Card>
-            <Card className="text-center">
-              <Card.Body>
-                <div className="text-3xl font-bold text-gold mb-2">{academicResults.destinations.employment}</div>
-                <p className="text-sage">Employment</p>
-              </Card.Body>
-            </Card>
-          </div>
-        </section>
+      <div className="space-y-8 mb-12">
+        <div className="bg-navy/10 rounded-xl p-6 text-center max-w-3xl mx-auto">
+          <ul className="space-y-2 text-lg text-navy font-semibold">
+            <li>99% Pass rate vs 70% nationally (Grades 4-9)</li>
+            <li>100% Pass rate in English, Maths and multiple other subjects (Grades 4-9)</li>
+            <li>68% Grade ‘A or better’ vs 22% nationally (Grades 7-9)</li>
+            <li>More than three times higher overall on Grade ‘A or better’ than the national average (Grades 7-9)</li>
+          </ul>
+        </div>
       </div>
+
+      {/* Pass (grades 4-9) Table */}
+      <section className="mb-12">
+        <h3 className="font-display text-2xl font-bold text-charcoal mb-6 text-center">Pass (grades 4-9)</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-center border border-gray-300 rounded-lg">
+            <thead>
+              <tr className="bg-navy text-white">
+                <th className="py-2 px-3">Subject</th>
+                <th className="py-2 px-3">English Lang.</th>
+                <th className="py-2 px-3">English Lit</th>
+                <th className="py-2 px-3">Maths</th>
+                <th className="py-2 px-3">Biology</th>
+                <th className="py-2 px-3">Chemistry</th>
+                <th className="py-2 px-3">Physics</th>
+                <th className="py-2 px-3">Computer Studies</th>
+                <th className="py-2 px-3">Citizenship</th>
+                <th className="py-2 px-3">History</th>
+                <th className="py-2 px-3">Religious Studies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-cream">
+                <td className="py-2 px-3 font-semibold">National average – 16 year olds %</td>
+                <td>71</td>
+                <td>74</td>
+                <td>71</td>
+                <td>90</td>
+                <td>91</td>
+                <td>91</td>
+                <td>68</td>
+                <td>67</td>
+                <td>64</td>
+                <td>72</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="py-2 px-3 font-semibold">AMIGS %</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* A or better (grades 7,8,9) Table */}
+      <section className="mb-12">
+        <h3 className="font-display text-2xl font-bold text-charcoal mb-6 text-center">‘A or better’ (grades 7, 8 or 9)</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-center border border-gray-300 rounded-lg">
+            <thead>
+              <tr className="bg-navy text-white">
+                <th className="py-2 px-3">Subject</th>
+                <th className="py-2 px-3">English Lang.</th>
+                <th className="py-2 px-3">English Lit</th>
+                <th className="py-2 px-3">Maths</th>
+                <th className="py-2 px-3">Biology</th>
+                <th className="py-2 px-3">Chemistry</th>
+                <th className="py-2 px-3">Physics</th>
+                <th className="py-2 px-3">Computer Studies</th>
+                <th className="py-2 px-3">Citizenship</th>
+                <th className="py-2 px-3">History</th>
+                <th className="py-2 px-3">Religious Studies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-cream">
+                <td className="py-2 px-3 font-semibold">National average – 16 year olds %</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>43</td>
+                <td>45</td>
+                <td>44</td>
+                <td>28</td>
+                <td>17</td>
+                <td>26</td>
+                <td>31</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="py-2 px-3 font-semibold">AMIGS %</td>
+                <td>33</td>
+                <td>44</td>
+                <td>72</td>
+                <td>33</td>
+                <td>50</td>
+                <td>50</td>
+                <td>33</td>
+                <td>33</td>
+                <td>67</td>
+                <td>72</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   )
 }

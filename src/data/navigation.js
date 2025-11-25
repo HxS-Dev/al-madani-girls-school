@@ -14,7 +14,7 @@ export const navigationData = {
       subItems: [
         { title: "Headteacher's Introduction", path: '/about/headteacher' },
         { title: 'School Values & Mission Statement', path: '/about/values' },
-        { title: 'Ofsted Report', path: '/about/ofsted' },
+        { title: 'Ofsted Report', path: 'https://reports.ofsted.gov.uk/provider/27/136955' },
         { title: 'Academic Results', path: '/about/results' },
         { title: 'Contact, Staff & Governors', path: '/about/contact' }
       ]
