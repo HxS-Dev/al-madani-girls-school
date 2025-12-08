@@ -1,9 +1,35 @@
-import React from 'react'
-import Card from '../../components/Card'
+import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button'
-import { contentData } from '../../data/content'
+import { sanityClient } from '../../sanityClient'
 
 const ContactStaffGovernors = () => {
+  const [staffGroups, setStaffGroups] = useState([])
+  const [staffByGroup, setStaffByGroup] = useState({})
+
+  useEffect(() => {
+    // Fetch staff groups
+    sanityClient.fetch(
+      `*[_type == "staffGroup"]|order(order asc){_id, name, order}`
+    ).then(groups => {
+      setStaffGroups(groups)
+      // For each group, fetch staff
+      Promise.all(
+        groups.map(group =>
+          sanityClient.fetch(
+            `*[_type == "staff" && staffGroup._ref == $groupId]|order(position asc){_id, name, position}`,
+            { groupId: group._id }
+          )
+        )
+      ).then(staffArrays => {
+        const byGroup = {}
+        groups.forEach((group, idx) => {
+          byGroup[group._id] = staffArrays[idx]
+        })
+        setStaffByGroup(byGroup)
+      })
+    })
+  }, [])
+
   return (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-16">
@@ -112,59 +138,26 @@ const ContactStaffGovernors = () => {
         </div>
       </div>
 
-      {/* Administration Section */}
-      <section className="mb-12">
-        <h3 className="font-display text-2xl font-bold text-navy mb-4">Administration</h3>
-        <div className="bg-white rounded-xl shadow p-6 mb-4">
-          <ul className="space-y-2">
-            <li><span className="font-semibold">Mrs. Aisha Khan</span> – School Administrator</li>
-            <li><span className="font-semibold">Mr. Bilal Patel</span> – Admissions Officer</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Senior Leadership Section */}
-      <section className="mb-12">
-        <h3 className="font-display text-2xl font-bold text-navy mb-4">Senior Leadership</h3>
-        <div className="bg-white rounded-xl shadow p-6 mb-4">
-          <ul className="space-y-2">
-            <li><span className="font-semibold">Dr. Sarah Ahmed</span> – Headteacher</li>
-            <li><span className="font-semibold">Mrs. Patricia Williams</span> – Deputy Headteacher (Academic)</li>
-            <li><span className="font-semibold">Ms. Jennifer Martinez</span> – Deputy Headteacher (Pastoral)</li>
-            <li><span className="font-semibold">Mr. David Thompson</span> – Assistant Headteacher (Teaching & Learning)</li>
-            <li><span className="font-semibold">Mrs. Lisa Anderson</span> – Assistant Headteacher (Sixth Form)</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Staff Section */}
-      <section className="mb-12">
-        <h3 className="font-display text-2xl font-bold text-navy mb-4">Staff</h3>
-        <div className="bg-white rounded-xl shadow p-6 mb-4">
-          <ul className="space-y-2">
-            <li><span className="font-semibold">Mr. Ahmed Siddiqui</span> – Mathematics Teacher</li>
-            <li><span className="font-semibold">Ms. Fatima Noor</span> – Science Teacher</li>
-            <li><span className="font-semibold">Mrs. Yasmin Ali</span> – English Teacher</li>
-            <li><span className="font-semibold">Mr. Tariq Hussain</span> – History Teacher</li>
-            <li><span className="font-semibold">Ms. Sofia Rahman</span> – Religious Studies Teacher</li>
-            {/* Add more staff as needed */}
-          </ul>
-        </div>
-      </section>
-
-      {/* Governance Section */}
-      <section className="mb-12">
-        <h3 className="font-display text-2xl font-bold text-navy mb-4">Governance</h3>
-        <div className="bg-white rounded-xl shadow p-6 mb-4">
-          <ul className="space-y-2">
-            <li><span className="font-semibold">Mr. Imran Qureshi</span> – Chair of Governors</li>
-            <li><span className="font-semibold">Mrs. Saira Begum</span> – Governor (Safeguarding)</li>
-            <li><span className="font-semibold">Dr. Farooq Malik</span> – Governor (Curriculum)</li>
-            <li><span className="font-semibold">Ms. Layla Hussain</span> – Governor (Community)</li>
-            {/* Add more governors as needed */}
-          </ul>
-        </div>
-      </section>
+      {/* Dynamic Staff Groups */}
+      {staffGroups.map(group => (
+        <section className="mb-12" key={group._id}>
+          <h3 className="font-display text-2xl font-bold text-navy mb-4">{group.name}</h3>
+          <div className="bg-white rounded-xl shadow p-6 mb-4">
+            <ul className="space-y-2">
+              {staffByGroup[group._id] && staffByGroup[group._id].length > 0 ? (
+                staffByGroup[group._id].map(staff => (
+                  <li key={staff._id}>
+                    <span className="font-semibold">{staff.name}</span>
+                    {staff.position ? ` – ${staff.position}` : ''}
+                  </li>
+                ))
+              ) : (
+                <li>No staff listed in this group.</li>
+              )}
+            </ul>
+          </div>
+        </section>
+      ))}
     </div>
   )
 }

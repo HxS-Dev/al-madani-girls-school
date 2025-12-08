@@ -11,5 +11,8 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true
-  }
+  },
+  optimizeDeps: {
+    include: ['pdfjs-dist/build/pdf.worker.min.js'],
+  },
 })

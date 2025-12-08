@@ -16,41 +16,19 @@ export const contentData = {
 
   about: {
     headteacher: {
-      name: "Dr. Sarah Ahmed",
+      name: "Teacher Zara",
       title: "Headteacher",
-      message: "Welcome to Al-Madani Girls School. Our school has been running since September 2018, having been set up by the Abu Haneefa Trust. The school covers Key Stage 3 & 4 education (Ages 11-16). As a Grammar school, it is selective in its intake. As an Independent school, it is fee based.\n\nThe school runs five Year groups with a maximum of 24 children per group, so the maximum school size is 120 pupils. Each year group learns a broad academic syllabus. Our school aims to equip your daughter with essential knowledge for life that will enable her to gain mastery in her academic, personal, and social spheres as well as spiritual success in the dunya and akhirah.\n\nThe underpinning ethos of our curriculum at Al-Madani Girls School embraces everything that your daughter does. When all is said and done, a girl does not come to Al-Madani Girls School simply to earn a set of qualifications. That is obviously an important part of what happens in the school, and we take the attainment of the best set of qualifications that each of our girls is capable of achieving very seriously, but it is certainly true that some of the most important things that one learns at school are not really to be measured in terms of qualifications.\n\nPositive habits formed at the beginning of her school career will be crucial in her success. When your daughter leaves Al-Madani Girls School, she will have several years experience of academic, sporting, and perhaps most importantly, personal growth to look back on, the greater part of the latter having been centred on her year group and the friendships she has made there.\n\nShe will almost certainly go on to university or other career progression tracks that she so chooses.\n\nLife at Al-Madani Girls School is rich, varied, exciting, challenging, sometimes even exhausting, but, above all, with the grace, help and Tawfeeq of Almighty Allaah, enormously rewarding. It is our aim to offer your daughter such opportunities that will transform her into a fine upstanding young lady capable of making substantive contributions to her family, community, society and country.\n\nThe Al-Madani Girls School girl of today is a global citizen and leader of tomorrow, in-shaa-Allaah.\n\nYet, the most important figures and influence in her life will be her parents, her home circle and wider community. We at school cannot truly educate your daughter without your help, so we look forward to your fully supportive and cooperative partnership with us. Your contribution will be the indispensable basis and a key component of the student, parents and educators relationship that will effectively contribute to outstanding morals, outstanding behaviour and outstanding educational experiences and achievements, in-shaa-Allah.",
-      qualifications: [
-        "PhD in Educational Leadership, University of London",
-        "MA in Mathematics Education, King's College London",
-        "BA (Hons) in Mathematics, University of Oxford",
-        "National Professional Qualification for Headship (NPQH)"
-      ],
-      experience: "15+ years in education, including 8 years as Headteacher"
+      message: "Assalamu Alaikum wa Rahmatullahi wa Barakatuh,\n\nIt is with great pleasure and gratitude to Allah (SWT) that I welcome you all to another exciting year at our school, where we nurture and educate young Muslimahs to become confident, compassionate, and contributing members of British society.\n\nOur ethos, Tarbiyah for Generations, is at the heart of everything we do. We are deeply committed to providing an environment that fosters both academic excellence and the development of strong Islamic character. By instilling the values of sincerity, kindness, respect, and a sense of responsibility, we aim to empower our students to uphold their Islamic identity while positively engaging with the wider community.\n\nWe take pride in creating a nurturing space where our students are encouraged to excel, dream big, and embrace their roles as future leaders. Through a rich curriculum, spiritual development, and a focus on community contribution, we strive to shape well-rounded individuals who embody the best of both their Islamic heritage and their British citizenship.\n\nMay Allah (SWT) grant us all success in this noble journey of learning and tarbiyah."
     },
-    
-    values: {
-      mission:
-        "Al-Madani Girls School's mission is to provide an outstanding Muslim values-based education that develops the whole child. Through a comprehensive, enriched curriculum that extends beyond the National Curriculum and a vibrant extracurricular program, we equip students with strong character and resilience alongside academic excellence.\n\nWe are committed to:\n– Nurturing critical thinkers who respect diversity of belief\n– Fostering spiritual growth and service to others\n– Cultivating leadership skills through example and opportunity\n– Excelling in all areas through perseverance and collaboration\n– Empowering students to effect positive change, using the Holy Quran as their guide, and the Holy prophet as their role model.\n\nWe achieve our mission by upholding the highest standards, forging strong relationships, and continually reflecting and improving, and through:\n– Rigorous learning experiences in a nurturing environment\n– Committed teachers inspiring students to give their best\n– Developing well-rounded learners through enriching opportunities\n– Instilling an ethic of service, compassion and integrity\n– Consulting students, parents and the community regularly\n– Our vision and ethos guide everything we do to help students find fulfilment and purpose in line with our Muslim values.",
-      vision:
-        "Al-Madani Girls School's vision is to nurture compassionate, principled leaders who excel academically, and positively impact the society. We strive to cultivate an inclusive environment where students feel inspired, supported and empowered to achieve their fullest God-given potential.",
-      values: [
-        {
-          title: "Respect",
-          description: "We treat everyone with dignity, valuing each individual's beliefs, background, and contributions.",
-          icon: "🤝"
-        },
-        {
-          title: "Be a good role model",
-          description: "We lead by example, demonstrating honesty, kindness, and responsibility in all our actions.",
-          icon: "🌟"
-        },
-        {
-          title: "Master the art of excellence",
-          description: "We strive for excellence in learning, character, and service, always aiming to improve ourselves and help others.",
-          icon: "🏆"
-        }
-      ]
-    },
+    values: [
+        "To set the foundation for the building of an Islamic personality; to provide students with the highest standards of education to enable them to develop their self-knowledge, self-esteem and self-confidence.",
+        "To distinguish right from wrong and to respect the law, to encourage pupils to accept responsibility for their behaviour, show initiative and understanding of how they can contribute to community life.",
+        "To provide pupils with a broad general knowledge of public institutions and services, and assist pupils to acquire an appreciation of and respect for their own and other cultures.",
+        "To promote equal opportunities, racial and religious harmony and social justice.",
+        "Educate pupils so that they also promote tolerance and harmony between different cultural traditions – this will inshaAllah help them to become responsible and productive citizens who will confidently meet the challenges of the future.",
+        "To present education as a lifelong process that will lead to a healthy lifestyle.",
+        "Educate pupils on how to keep safe, to be able to achieve economical well-being and improve their spiritual, moral, social and cultural outlooks."
+    ],
 
     academicResults: {
       gcse: {

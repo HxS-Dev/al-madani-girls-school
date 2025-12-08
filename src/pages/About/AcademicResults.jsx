@@ -1,138 +1,100 @@
-import React from 'react'
-import Card from '../../components/Card'
-import Button from '../../components/Button'
-import { contentData } from '../../data/content'
+import React, { useEffect, useState } from 'react';
+import { sanityClient } from '../../sanityClient';
+import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
-const AcademicResults = () => {
-  const { academicResults } = contentData.about
-  
+function AcademicResults() {
+  const [resultsTimeline, setResultsTimeline] = useState([]);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "academicResults"] | order(year desc){
+          year,
+          pdf{asset->{url}}
+        }`
+      )
+      .then(setResultsTimeline)
+      .catch(console.error);
+  }, []);
+
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto py-16 px-4">
       <div className="text-center mb-16">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-charcoal mb-6">
           Academic Results
         </h2>
-        <p className="text-xl text-sage">
-          Our students consistently achieve outstanding academic results in their GCSE exams.
+        <p className="text-xl text-sage max-w-3xl mx-auto">
+          View our academic results for each year. Click the PDF to download the report.
         </p>
       </div>
 
-      <div className="space-y-8 mb-12">
-        <div className="bg-navy/10 rounded-xl p-6 text-center max-w-3xl mx-auto">
-          <ul className="space-y-2 text-lg text-navy font-semibold">
-            <li>99% Pass rate vs 70% nationally (Grades 4-9)</li>
-            <li>100% Pass rate in English, Maths and multiple other subjects (Grades 4-9)</li>
-            <li>68% Grade ‘A or better’ vs 22% nationally (Grades 7-9)</li>
-            <li>More than three times higher overall on Grade ‘A or better’ than the national average (Grades 7-9)</li>
-          </ul>
-        </div>
+      <div className="relative flex flex-col items-center">
+        {/* Timeline vertical line */}
+        <div
+          className="absolute left-1/2 transform -translate-x-1/2 h-full w-2 bg-navy/30 z-0"
+        />
+
+        {resultsTimeline.map((result, idx) => (
+          <div
+            key={result.year}
+            className="w-full flex flex-col md:flex-row items-center mb-24 relative z-10"
+          >
+            {/* Left side */}
+            <div
+              className={`w-full md:w-1/2 flex ${
+                idx % 2 === 0 ? 'justify-end md:pr-8' : 'justify-start md:pl-8'
+              } order-1 md:order-none`}
+            >
+              {/* On mobile, show empty div for left side if needed */}
+              {idx % 2 === 0 || window.innerWidth >= 768 ? (
+                <a href={result.pdf?.asset?.url} target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <div className="max-w-md w-full h-auto max-h-[800px]">
+                    {idx % 2 === 0 && (
+                      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                        <Viewer
+                          fileUrl={result.pdf?.asset?.url}
+                          defaultScale={SpecialZoomLevel.PageWidth}
+                        />
+                      </Worker>
+                    )}
+                  </div>
+                </a>
+              ) : null}
+            </div>
+
+            {/* Timeline dot */}
+            <div className="w-0 flex flex-col items-center z-10 order-0 md:order-none">
+              <div className="w-24 h-24 bg-gold rounded-full border-4 border-navy flex items-center justify-center shadow-lg">
+                <span
+                  className="text-navy font-bold text-3xl text-center w-full"
+                  style={{ lineHeight: 1 }}
+                >
+                  {result.year}
+                </span>
+              </div>
+            </div>
+
+            {/* Right side */}
+            <div className="w-full md:w-1/2 flex justify-start md:pl-16 order-2 md:order-none">
+              <div className="max-w-md w-full h-auto max-h-[800px] md:pl-8">
+                {idx % 2 === 1 || window.innerWidth < 768 ? (
+                  <a href={result.pdf?.asset?.url} target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                      <Viewer
+                        fileUrl={result.pdf?.asset?.url}
+                        defaultScale={SpecialZoomLevel.PageWidth}
+                      />
+                    </Worker>
+                  </a>
+                ) : null}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-      {/* Pass (grades 4-9) Table */}
-      <section className="mb-12">
-        <h3 className="font-display text-2xl font-bold text-charcoal mb-6 text-center">Pass (grades 4-9)</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-center border border-gray-300 rounded-lg">
-            <thead>
-              <tr className="bg-navy text-white">
-                <th className="py-2 px-3">Subject</th>
-                <th className="py-2 px-3">English Lang.</th>
-                <th className="py-2 px-3">English Lit</th>
-                <th className="py-2 px-3">Maths</th>
-                <th className="py-2 px-3">Biology</th>
-                <th className="py-2 px-3">Chemistry</th>
-                <th className="py-2 px-3">Physics</th>
-                <th className="py-2 px-3">Computer Studies</th>
-                <th className="py-2 px-3">Citizenship</th>
-                <th className="py-2 px-3">History</th>
-                <th className="py-2 px-3">Religious Studies</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-cream">
-                <td className="py-2 px-3 font-semibold">National average – 16 year olds %</td>
-                <td>71</td>
-                <td>74</td>
-                <td>71</td>
-                <td>90</td>
-                <td>91</td>
-                <td>91</td>
-                <td>68</td>
-                <td>67</td>
-                <td>64</td>
-                <td>72</td>
-              </tr>
-              <tr className="bg-white">
-                <td className="py-2 px-3 font-semibold">AMIGS %</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>94</td>
-                <td>94</td>
-                <td>94</td>
-                <td>94</td>
-                <td>94</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* A or better (grades 7,8,9) Table */}
-      <section className="mb-12">
-        <h3 className="font-display text-2xl font-bold text-charcoal mb-6 text-center">‘A or better’ (grades 7, 8 or 9)</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-center border border-gray-300 rounded-lg">
-            <thead>
-              <tr className="bg-navy text-white">
-                <th className="py-2 px-3">Subject</th>
-                <th className="py-2 px-3">English Lang.</th>
-                <th className="py-2 px-3">English Lit</th>
-                <th className="py-2 px-3">Maths</th>
-                <th className="py-2 px-3">Biology</th>
-                <th className="py-2 px-3">Chemistry</th>
-                <th className="py-2 px-3">Physics</th>
-                <th className="py-2 px-3">Computer Studies</th>
-                <th className="py-2 px-3">Citizenship</th>
-                <th className="py-2 px-3">History</th>
-                <th className="py-2 px-3">Religious Studies</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-cream">
-                <td className="py-2 px-3 font-semibold">National average – 16 year olds %</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>43</td>
-                <td>45</td>
-                <td>44</td>
-                <td>28</td>
-                <td>17</td>
-                <td>26</td>
-                <td>31</td>
-              </tr>
-              <tr className="bg-white">
-                <td className="py-2 px-3 font-semibold">AMIGS %</td>
-                <td>33</td>
-                <td>44</td>
-                <td>72</td>
-                <td>33</td>
-                <td>50</td>
-                <td>50</td>
-                <td>33</td>
-                <td>33</td>
-                <td>67</td>
-                <td>72</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
     </div>
-  )
+  );
 }
 
-export default AcademicResults
+export default AcademicResults;

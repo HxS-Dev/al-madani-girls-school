@@ -14,7 +14,7 @@ function Navigation() {
       path: '/about',
       dropdown: [
         { name: "Headteacher's Introduction", path: '/about/headteacher' },
-        { name: 'School Values & Mission Statement', path: '/about/values' },
+        { name: 'School Vision & Ethos', path: '/about/values' },
         { name: 'Ofsted Report', path: 'https://reports.ofsted.gov.uk/provider/27/136955' },
         { name: 'Academic Results', path: '/about/results' },
         { name: 'Contact, Staff & Governors', path: '/about/contact' }
