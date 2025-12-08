@@ -92,7 +92,7 @@ function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-3" onClick={closeDropdown}>
-            <img src="../../resources/school-logo.jpg" alt="Al-Madani Girls School Logo" className="w-10 h-10 object-cover" />
+            <img src="/images/Al-Madani Girls School no slogan.jpg" alt="Al-Madani Girls School Logo" className="w-10 h-10 object-cover" />
             <div>
               <h1 className="text-xl font-display text-navy font-bold">Al-Madani Girls School</h1>
               <p className="text-sage text-sm">Tarbiyah For Generations</p>

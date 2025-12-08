@@ -63,7 +63,7 @@ export const contentData = {
         excerpt: "Al-Madani Girls School celebrates exceptional GCSE results with 78% of grades at 9-7 and 96% at 9-4.",
         date: "2024-08-22",
         category: "Academic",
-        image: "/resources/library-students.png",
+        image: "",
         content: "Our students have once again demonstrated exceptional academic achievement..."
       },
       {
@@ -72,7 +72,7 @@ export const contentData = {
         excerpt: "State-of-the-art science facilities unveiled to enhance STEM education for our students.",
         date: "2024-09-15",
         category: "Facilities",
-        image: "/resources/science-lab.png",
+        image: "",
         content: "The new science laboratory represents our commitment to providing cutting-edge facilities..."
       },
       {
@@ -81,7 +81,7 @@ export const contentData = {
         excerpt: "Students participated in inspiring workshops and presentations celebrating women's achievements.",
         date: "2024-03-08",
         category: "Events",
-        image: "/resources/assembly-hall.png",
+        image: "",
         content: "Our International Women's Day celebration brought together students, staff, and guest speakers..."
       }
     ],

@@ -41,22 +41,22 @@ const Home = () => {
 
   const carouselItems = [
     {
-      image: '/resources/library-students.png',
+      image: '',
       title: 'Modern Library & Learning Spaces',
       description: 'State-of-the-art facilities for academic excellence'
     },
     {
-      image: '/resources/science-lab.png',
+      image: '',
       title: 'Science & Technology Labs',
       description: 'Cutting-edge STEM education facilities'
     },
     {
-      image: '/resources/assembly-hall.png',
+      image: '',
       title: 'Prayer & Assembly Hall',
       description: 'Multi-purpose space for worship and gatherings'
     },
     {
-      image: '/resources/hero-school.png',
+      image: '',
       title: 'School Campus',
       description: 'Modern Islamic educational environment'
     }
@@ -96,7 +96,7 @@ const Home = () => {
       <section 
         className="relative min-h-screen flex items-center justify-center hero-bg"
         style={{
-          backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.1), rgba(217, 119, 6, 0.1)), url('/resources/hero-school.png')`,
+          backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.1), rgba(217, 119, 6, 0.1)), url('')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -251,7 +251,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="reveal" hover>
-              <Card.Image src="/resources/library-students.png" alt="Islamic Studies" />
+              <Card.Image src="" alt="Islamic Studies" />
               <Card.Body>
                 <Card.Title>Islamic Studies & Qur'an</Card.Title>
                 <Card.Text>
@@ -267,7 +267,7 @@ const Home = () => {
             </Card>
 
             <Card className="reveal" hover>
-              <Card.Image src="/resources/science-lab.png" alt="Modern Sciences" />
+              <Card.Image src="" alt="Modern Sciences" />
               <Card.Body>
                 <Card.Title>Modern Sciences & Technology</Card.Title>
                 <Card.Text>
@@ -283,7 +283,7 @@ const Home = () => {
             </Card>
 
             <Card className="reveal" hover>
-              <Card.Image src="/resources/assembly-hall.png" alt="Prayer Facilities" />
+              <Card.Image src="" alt="Prayer Facilities" />
               <Card.Body>
                 <Card.Title>Prayer & Spiritual Development</Card.Title>
                 <Card.Text>
@@ -315,7 +315,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <Card className="reveal" hover>
-              <Card.Image src="/resources/library-students.png" alt="Ramadan Achievements" />
+              <Card.Image src="" alt="Ramadan Achievements" />
               <Card.Body>
                 <div className="flex items-center mb-3">
                   <span className="bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium">
@@ -337,7 +337,7 @@ const Home = () => {
             </Card>
 
             <Card className="reveal" hover>
-              <Card.Image src="/resources/science-lab.png" alt="Qur'an Competition" />
+              <Card.Image src="" alt="Qur'an Competition" />
               <Card.Body>
                 <div className="flex items-center mb-3">
                   <span className="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-medium">
@@ -359,7 +359,7 @@ const Home = () => {
             </Card>
 
             <Card className="reveal" hover>
-              <Card.Image src="/resources/assembly-hall.png" alt="Hajj Workshop" />
+              <Card.Image src="" alt="Hajj Workshop" />
               <Card.Body>
                 <div className="flex items-center mb-3">
                   <span className="bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium">
