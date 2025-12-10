@@ -29,36 +29,29 @@ export const navigationData = {
       ]
     },
     {
-      id: 'dates',
-      title: 'Key Dates & Timings',
-      path: '/dates',
-      subItems: [
-        { title: 'Annual Calendar', path: '/dates/calendar' },
-        { title: 'School Timetable', path: '/dates/timetable' }
-      ]
+      id: 'annual-calendar',
+      title: 'Annual Calendar',
+      path: '/dates/calendar',
+      subItems: []
     },
     {
       id: 'admissions',
       title: 'Admissions',
       path: '/admissions',
       subItems: [
-        { title: 'Admissions Calendar', path: '/admissions/calendar' },
-        { title: 'Admissions Procedure', path: '/admissions/procedure' },
+        { title: 'Application Timeline', path: '/admissions/calendar' },
+        { title: 'Admissions Policy', path: '/admissions/procedure' },
         { title: 'Admissions Fees', path: '/admissions/fees' },
         { title: 'Application Form', path: '/admissions/application' },
-        { title: 'Entrance Exam Overview', path: '/admissions/exam' },
-        { title: 'Gallery', path: '/admissions/gallery' }
+        { title: 'Entrance Exam Overview', path: '/admissions/exam' }
       ]
     },
     {
-      id: 'information',
-      title: 'Fees & Key Information',
-      path: '/information',
+      id: 'policies',
+      title: 'Policies',
+      path: '/policies',
       subItems: [
-        { title: 'Policies', path: '/information/policies' },
-        { title: 'School Fees', path: '/information/fees' },
-        { title: 'School Curriculum', path: '/information/curriculum' },
-        { title: 'Uniform & Equipment', path: '/information/uniform' }
+        { title: 'Policies', path: '/policies/policies' }
       ]
     }
   ]

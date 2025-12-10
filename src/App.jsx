@@ -7,7 +7,7 @@ import About from './pages/About'
 import News from './pages/News'
 import Dates from './pages/Dates'
 import Admissions from './pages/Admissions'
-import Information from './pages/Information'
+import Information from './pages/Policies'
 
 function AppContent() {
   const location = useLocation()
@@ -23,7 +23,7 @@ function AppContent() {
           <Route path="/news-events/*" element={<News />} />
           <Route path="/key-dates/*" element={<Dates />} />
           <Route path="/admissions/*" element={<Admissions />} />
-          <Route path="/fees-information/*" element={<Information />} />
+          <Route path="/policies/*" element={<Information />} />
         </Routes>
       </main>
       <Footer />
