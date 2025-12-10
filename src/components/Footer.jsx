@@ -27,8 +27,8 @@ const Footer = () => {
             <h4 className="font-display text-lg font-semibold text-gold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li><Link to="/admissions" className="text-gray-300 hover:text-white transition-colors">Admissions</Link></li>
-              <li><Link to="/news" className="text-gray-300 hover:text-white transition-colors">News & Events</Link></li>
-              <li><Link to="/dates" className="text-gray-300 hover:text-white transition-colors">Key Dates</Link></li>
+              <li><Link to="/news-events/news" className="text-gray-300 hover:text-white transition-colors">News</Link></li>
+              <li><Link to="/key-dates/calendar" className="text-gray-300 hover:text-white transition-colors">Annual Calendar</Link></li>
               <li><Link to="/about/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -37,10 +37,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold text-gold mb-6">Academic</h4>
             <ul className="space-y-3">
-              <li><Link to="/information/curriculum" className="text-gray-300 hover:text-white transition-colors">Islamic Curriculum</Link></li>
+              <li><Link to="/admissions/entrance-exam" className="text-gray-300 hover:text-white transition-colors">Entrance Exam</Link></li>
               <li><Link to="/about/results" className="text-gray-300 hover:text-white transition-colors">Academic Results</Link></li>
               <li><a href="https://reports.ofsted.gov.uk/provider/27/136955" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Ofsted Report</a></li>
-              <li><Link to="/information/policies" className="text-gray-300 hover:text-white transition-colors">School Policies</Link></li>
+              <li><Link to="/policies/policies" className="text-gray-300 hover:text-white transition-colors">School Policies</Link></li>
             </ul>
           </div>
 
@@ -48,10 +48,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold text-gold mb-6">Community</h4>
             <ul className="space-y-3">
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Our School</Link></li>
-              <li><Link to="/about/values" className="text-gray-300 hover:text-white transition-colors">Islamic Values</Link></li>
-              <li><Link to="/admissions/gallery" className="text-gray-300 hover:text-white transition-colors">School Gallery</Link></li>
-              <li><Link to="/information/uniform" className="text-gray-300 hover:text-white transition-colors">Uniform & Equipment</Link></li>
+              <li><Link to="/about/values" className="text-gray-300 hover:text-white transition-colors">School Values</Link></li>
+              <li><Link to="/about/headteacher" className="text-gray-300 hover:text-white transition-colors">Headteacher's Introduction</Link></li>
+              <li><Link to="/news-events/events" className="text-gray-300 hover:text-white transition-colors">Events</Link></li>
             </ul>
           </div>
         </div>

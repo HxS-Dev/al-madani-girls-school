@@ -16,7 +16,7 @@ function AppContent() {
     <div className="min-h-screen bg-cream">
       <Navigation />
       {!isHome && <div className="mb-6" />}
-      <main className="pb-12">
+      <main className={isHome ? '' : 'pb-12'}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about/*" element={<About />} />

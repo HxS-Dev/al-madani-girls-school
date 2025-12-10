@@ -8,5 +8,6 @@ import { applicationTimelineType } from './applicationTimelineType'
 import { admissionsPolicyType } from './admissionsPolicyType'
 import { admissionsFeesType } from './admissionsFeesType'
 import { applicationFormType } from './applicationFormType'
+import { policiesType } from './policiesType'
 
-export const schemaTypes = [academicResultsType, staffGroupType, staffType, newslettersType, eventsType, annualCalendarType, applicationTimelineType, admissionsPolicyType, admissionsFeesType, applicationFormType]
+export const schemaTypes = [academicResultsType, staffGroupType, staffType, newslettersType, eventsType, annualCalendarType, applicationTimelineType, admissionsPolicyType, admissionsFeesType, applicationFormType, policiesType]
